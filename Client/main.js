@@ -16,18 +16,18 @@ client.on('ready', () => {
 client.on('message', msg => {
     if (msg.content === "!code") {
 
-        let getUserID = msg.member.toString(); //grab id of discord user
+        let getUserID = msg.author.id; //grab id of discord user
         
         User.countDocuments({ DiscordID: `${getUserID}` }, function (err, shit) {
             if ( shit>0 ) {
-                console.log(`found user ${getUserID} already`);
-                msg.reply(`user ${getUserID} exists already`);
+                //console.log(`found user ${getUserID} already`); //debug option
+                msg.reply(`user <@${getUserID}> exists already`);
             } else {
-                console.log('does not exist yet');
+                //console.log('does not exist yet'); //debug option
                 //actual POST request
                 request.post('http://localhost:3000/User', {
                   json: {
-                    DiscordID: `${getUserID}`
+                    DiscordID: `<@${getUserID}>`
                   }
                 }, (error, res, body) => {
                   if (error) {
@@ -39,18 +39,6 @@ client.on('message', msg => {
             }
         });
     }
-
-    if (msg.content === "what is eerix?") {
-      msg.reply('<@295185070292074497> is a cunt.');
-    }
-    if (msg.content === "why is eerix a cunt?") {
-      msg.reply('<@295185070292074497> is a cunt, because daddy <@197082304420511744> told me so.... uwu');
-    }
-    if (msg.content === "what do you think of pride?") {
-      msg.reply(`they are faggots that should be annihilated.` + `\n` + `https://media.giphy.com/media/rkkMc8ahub04w/giphy.gif`);
-    }
-    
-
 });
 
-client.login('NDc3NTI4NjMzMzc2NzY4MDAx.D3Po2g.ZaRrNTOC8RWZjimNnTEMgF59JzI');
+client.login();
