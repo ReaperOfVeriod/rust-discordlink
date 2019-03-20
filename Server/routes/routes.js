@@ -4,12 +4,12 @@ module.exports = function(app) {
   var RESTAPI = require('../Controllers/controllers');
   console.log('routes initialised')
   // RESTAPI Routes
-  app.route('/Shit')
-    .get(RESTAPI.listAllShit)
-    .post(RESTAPI.createShit);
+  app.route('/User')
+    .get(RESTAPI.listAllUser)
+    .post(RESTAPI.createUser);
 
-  app.route('/Shit/:ShitId')
-    .get(RESTAPI.readShit)
-    .put(RESTAPI.updateShit)
-    .delete(RESTAPI.deleteShit);
+  app.route('/User/:UserId')
+    .get(RESTAPI.readUser)
+    .put(RESTAPI.updateUser)
+    .delete(RESTAPI.deleteUser);
 };

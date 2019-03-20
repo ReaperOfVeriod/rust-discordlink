@@ -1,52 +1,52 @@
 'use strict';
 var mongoose = require('mongoose'),
-Shit = mongoose.model('Shit');
+User = mongoose.model('User');
 
-exports.listAllShit = function(req, res) {
-  Shit.find({}, function(err, shit) {
+exports.listAllUser = function(req, res) {
+  User.find({}, function(err, user) {
     if (err)
       res.send(err);
-    res.json(shit);
+    res.json(user);
   });
 };
 
 
-exports.createShit = function(req, res) {
+exports.createUser = function(req, res) {
     console.log(req);
-  var newShit = new Shit(req.body);
-  newShit.save(function(err, shit) {
+  var newUser = new User(req.body);
+  newUser.save(function(err, user) {
     if (err)
       res.send(err);
-    res.json(shit);
+    res.json(user);
   });
 };
 
 
-exports.readShit = function(req, res) {
-  Shit.findById(req.params.ShitId, function(err, shit) {
+exports.readUser = function(req, res) {
+  User.findById(req.params.UserId, function(err, user) {
     if (err)
       res.send(err);
-    res.json(shit);
+    res.json(user);
   });
 };
 
 
-exports.updateShit = function(req, res) {
-  Shit.findOneAndUpdate({_id: req.params.ShitId}, {$set: req.body}, {new: true}, function(err, shit) {
+exports.updateUser = function(req, res) {
+  User.findOneAndUpdate({_id: req.params.UserId}, {$set: req.body}, {new: true}, function(err, user) {
     if (err)
       res.send(err);
-    res.json(shit);
+    res.json(user);
   });
 };
 
 
-exports.deleteShit = function(req, res) {
+exports.deleteUser = function(req, res) {
     console.log(req);
-  Shit.deleteOne({
-    _id: req.params.ShitId
+    User.deleteOne({
+    _id: req.params.UserId
   }, function(err) {
     if (err)
       res.send(err);
-    res.json({ message: 'deleted this shit.' });
+    res.json({ message: 'deleted this user.' });
   });
 };

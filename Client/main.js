@@ -7,7 +7,7 @@ Shit = mongoose.model('Shit');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/ShitDB', { useNewUrlParser: true }); 
+mongoose.connect('mongodb://localhost/UserDB', { useNewUrlParser: true }); 
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -25,7 +25,7 @@ client.on('message', msg => {
             } else {
                 console.log('does not exist yet');
                 //actual POST request
-                request.post('http://localhost:3000/shit', {
+                request.post('http://localhost:3000/User', {
                   json: {
                     DiscordID: `${getUserID}`
                   }
@@ -53,4 +53,4 @@ client.on('message', msg => {
 
 });
 
-client.login('NDc3NTI4NjMzMzc2NzY4MDAx.D3LNSg.z2hq1BaYpWM_um_ouWnBfKBT_BI');
+client.login('NDc3NTI4NjMzMzc2NzY4MDAx.D3Po2g.ZaRrNTOC8RWZjimNnTEMgF59JzI');
