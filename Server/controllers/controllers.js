@@ -1,6 +1,4 @@
 'use strict';
-
-
 var mongoose = require('mongoose'),
 Shit = mongoose.model('Shit');
 
@@ -11,8 +9,6 @@ exports.listAllShit = function(req, res) {
     res.json(shit);
   });
 };
-
-
 
 
 exports.createShit = function(req, res) {

@@ -4,12 +4,13 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "node main.js"
+    "start": "nodemon main.js"
   },
   "author": "ReaperOfVeriod",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
-    "mongoose": "^5.4.19"
+    "mongoose": "^5.4.19",
+    "nodemon": "^1.18.10"
   }
 }

@@ -39,6 +39,18 @@ client.on('message', msg => {
             }
         });
     }
+
+    if (msg.content === "what is eerix?") {
+      msg.reply('<@295185070292074497> is a cunt.');
+    }
+    if (msg.content === "why is eerix a cunt?") {
+      msg.reply('<@295185070292074497> is a cunt, because daddy <@197082304420511744> told me so.... uwu');
+    }
+    if (msg.content === "what do you think of pride?") {
+      msg.reply(`they are faggots that should be annihilated.` + `\n` + `https://media.giphy.com/media/rkkMc8ahub04w/giphy.gif`);
+    }
+    
+
 });
 
 client.login('NDc3NTI4NjMzMzc2NzY4MDAx.D3LNSg.z2hq1BaYpWM_um_ouWnBfKBT_BI');
