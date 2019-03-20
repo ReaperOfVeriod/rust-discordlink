@@ -19,7 +19,7 @@ client.on('message', msg => {
 
         let getUserID = msg.author.id; //grab id of discord user
         
-        User.countDocuments({ DiscordID: `${getUserID}` }, function (err, shit) {
+        User.countDocuments({ DiscordID: `<@${getUserID}>` }, function (err, shit) {
             if ( shit>0 ) {
                 //console.log(`found user ${getUserID} already`); //debug option
                 msg.reply(`user <@${getUserID}> exists already`);
