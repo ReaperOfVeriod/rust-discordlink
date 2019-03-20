@@ -4,6 +4,7 @@ const request = require('request');
 var mongoose = require('mongoose');
 Task = require('./Models/models');
 User = mongoose.model('User');
+const private = require('./private.json');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
@@ -41,4 +42,4 @@ client.on('message', msg => {
     }
 });
 
-client.login();
+client.login(private.token);
