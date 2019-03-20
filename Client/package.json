@@ -1,0 +1,16 @@
+{
+  "name": "client-rust",
+  "version": "0.0.0",
+  "description": "client side that handles server commands.",
+  "main": "main.js",
+  "scripts": {
+    "test": "node ./main.js"
+  },
+  "author": "ReaperOfVeriod",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "mongoose": "^5.4.19",
+    "request": "^2.88.0"
+  }
+}
