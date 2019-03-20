@@ -12,7 +12,6 @@ exports.listAllUser = function(req, res) {
 
 
 exports.createUser = function(req, res) {
-    console.log(req);
   var newUser = new User(req.body);
   newUser.save(function(err, user) {
     if (err)
@@ -41,7 +40,6 @@ exports.updateUser = function(req, res) {
 
 
 exports.deleteUser = function(req, res) {
-    console.log(req);
     User.deleteOne({
     _id: req.params.UserId
   }, function(err) {

@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 
-var ShitSchema = new Schema({
+var UserSchema = new Schema({
     DiscordID: {
         type: String,
         required: 'discord ID missing'
@@ -17,4 +17,4 @@ var ShitSchema = new Schema({
     }
 });
 
-module.exports = mongoose.model('Shit', ShitSchema);
+module.exports = mongoose.model('User', UserSchema);

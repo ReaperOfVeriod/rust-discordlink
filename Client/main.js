@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const request = require('request');
 var mongoose = require('mongoose');
 Task = require('./Models/models');
-Shit = mongoose.model('Shit');
+User = mongoose.model('User');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
@@ -18,7 +18,7 @@ client.on('message', msg => {
 
         let getUserID = msg.member.toString(); //grab id of discord user
         
-        Shit.countDocuments({ DiscordID: `${getUserID}` }, function (err, shit) {
+        User.countDocuments({ DiscordID: `${getUserID}` }, function (err, shit) {
             if ( shit>0 ) {
                 console.log(`found user ${getUserID} already`);
                 msg.reply(`user ${getUserID} exists already`);
