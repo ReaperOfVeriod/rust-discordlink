@@ -4,7 +4,7 @@ namespace Oxide.Plugins
 {
     [Info("dcpc", "ReaperOfVeriod", "0.1.0")]
     [Description("Makes epic stuff happen")]
-    class EpicStuff : CovalencePlugin
+    class dcpc : CovalencePlugin
     {
         private void Init()
         {
