@@ -1,5 +1,6 @@
 ﻿using System;
 using Oxide.Core.Libraries.Covalence;
+using Oxide.Core.Libraries.Webrequest;
 
 namespace Oxide.Plugins
 {
