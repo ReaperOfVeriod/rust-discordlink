@@ -1,4 +1,5 @@
 ﻿using System;
+using Oxide.Core.Libraries.Covalence;
 
 namespace Oxide.Plugins
 {
