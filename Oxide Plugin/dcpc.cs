@@ -16,6 +16,14 @@ namespace Oxide.Plugins
         private void TestCommand(IPlayer player, string command, string[] args)
         {
             player.Reply("Test successful!");
+
+            webrequest.Enqueue("http://www.google.com/search?q=umod", null, (code, response) => {
+                if (code != 200 || response == null) {
+                    Puts($"Couldn't get an answer from Google!");
+                    return;
+                }
+                Puts($"Google answered: {response}");
+            }, this, RequestMethod.GET);
         }
 
     }
