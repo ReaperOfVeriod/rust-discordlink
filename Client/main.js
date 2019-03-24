@@ -1,45 +1,36 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
+const Enmap = require("enmap");
+const fs = require("fs");
+
 const client = new Discord.Client();
-const request = require('request');
-const private = require('./private.json');
-
-
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
+const config = require("./config.json");
+const private = require("./private.json");
+//attaching the config to the CLIENT so it's accessible everywhere
 
 client.on('error', console.error);
 
-client.on('message', msg => {
-  if (msg.content === "!code") {
+client.config = config;
 
-    let getUserID = msg.author.id; //grab id of discord user
+fs.readdir("./events/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    const event = require(`./events/${file}`);
+    let eventName = file.split(".")[0];
+    client.on(eventName, event.bind(null, client));
+  });
+});
 
-    request('http://localhost:3000/User', { json: true }, (err, res, body) => {
-      if (err) {
-        return console.log(err);
-      }
+client.commands = new Enmap();
 
-      if (body.some(userId => userId.DiscordID === `<@${getUserID}>`)) {
-        console.log('user already exists');
-        msg.reply(`user <@${getUserID}> exists already`);
-      } else {
-        console.log('user does not exist');
-        //actual POST request
-        request.post('http://localhost:3000/User', {
-          json: {
-            DiscordID: `<@${getUserID}>`
-          }
-        }, (error, res, body) => {
-          if (error) {
-            console.error(error);
-            return
-          }
-          msg.reply(`Your unique code is: ${body._id}`); //reply ID on discord
-        });
-      }
-    });
-  }
+fs.readdir("./commands/", (err, files) => {
+  if (err) return console.error(err);
+  files.forEach(file => {
+    if (!file.endsWith(".js")) return;
+    let props = require(`./commands/${file}`);
+    let commandName = file.split(".")[0];
+    console.log(`Attempting to load command: ${commandName}`);
+    client.commands.set(commandName, props);
+  });
 });
 
 client.login(private.token);
