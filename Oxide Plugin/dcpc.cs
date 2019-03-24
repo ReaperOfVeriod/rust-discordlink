@@ -1,6 +1,16 @@
-﻿using System;
+﻿using Oxide.Core.Libraries;
 using Oxide.Core.Libraries.Covalence;
-using Oxide.Core.Libraries.Webrequest;
+using Oxide.Core;
+using Oxide.Core.Plugins;
+using Oxide.Core.Configuration;
+using System.Collections.Generic;
+using System;
+using UnityEngine;
+using System.Linq;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Data;
+using Network;
 
 namespace Oxide.Plugins
 {
@@ -18,13 +28,23 @@ namespace Oxide.Plugins
         {
             player.Reply("Test successful!");
 
-            webrequest.Enqueue("http://www.google.com/search?q=umod", null, (code, response) => {
-                if (code != 200 || response == null) {
-                    Puts($"Couldn't get an answer from Google!");
+
+            Dictionary<string, string> parameters = new Dictionary<string, string>();
+
+            parameters.Add("SteamID", "test123");
+            parameters.Add("_id", "5c94bf6dc20a301b1829ba0b");
+
+            string[] body = string.Join("&", parameters.Cast<string>().Select(key => string.Format("{0}={1}", key, source[key]));
+
+            webrequest.Enqueue("http://localhost:3000/User", body, (code, response) =>
+            {
+                if (code != 200 || response == null)
+                {
+                    Puts($"error 400");
                     return;
                 }
-                Puts($"Google answered: {response}");
-            }, this, RequestMethod.GET);
+                Puts($"{response}");
+            }, this, RequestMethod.PUT);
         }
 
     }
