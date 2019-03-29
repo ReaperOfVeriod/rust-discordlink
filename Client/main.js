@@ -41,7 +41,7 @@ client.on('messageReactionAdd', (reaction, user, data, message) => {
   
   console.log();
   if (reaction.message.id !== config.embedRoleReactID) return;
-  const guild = client.guilds.get("556862298816512034"); //server id
+  const guild = client.guilds.get(config.serverID);
   const testRole = guild.roles.find(role => role.name === "test");
   const MEMBER = guild.member(user);
   MEMBER.addRole(testRole).catch(console.error);
