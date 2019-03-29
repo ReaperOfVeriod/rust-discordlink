@@ -6,11 +6,18 @@ const client = new Discord.Client();
 const config = require("./config.json");
 const private = require("./private.json");
 //attaching the config to the CLIENT so it's accessible everywhere
+client.config = config;
 
 client.on('error', console.error);
 
-client.config = config;
+// console chatter
+let y = process.openStdin()
+y.addListener("data", res => {
+  let x = res.toString().trim().split(/ +/g)
+  client.channels.get(config.consoleChannel).send(x.join(" "));
+});
 
+//event handler
 fs.readdir("./events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
@@ -21,7 +28,7 @@ fs.readdir("./events/", (err, files) => {
 });
 
 client.commands = new Enmap();
-
+//command handler
 fs.readdir("./commands/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
