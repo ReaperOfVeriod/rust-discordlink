@@ -1,5 +1,6 @@
 exports.run = (client, message, args) => {
     const config = require("./../config.json");
+    if (message.guild === null) { return }
     if(message.author.id !== config.ownerID) return;
     if(!args || args.size < 1) return message.reply("Must provide a command name to reload.");
     const commandName = args[0];
