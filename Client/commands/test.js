@@ -1,12 +1,16 @@
 const request = require('request');
 const Discord = require('discord.js');
+const fs = require('fs');
+const path = "./images";
 
 exports.run = (client, message, args) => {
     request('https://rust-servers.net/api/?object=servers&element=detail&key=fMfruWLJibpYrcIpGfg1zQ2koShJ5hdfVOH', { json: true }, (err, res, body) => {
         if (err) {
             return console.log(err); 
         }
-        console.log(body);
+        //console.log(body);
+
+        const banner = fs.readdirSync(path);
 
         let id = body.id;
         let serverName = body.name;
@@ -42,10 +46,11 @@ exports.run = (client, message, args) => {
         ${votes}
 
         ${voteLink}
+
         
         `)
+        .setImage("https://cdn.discordapp.com/attachments/557640637151707136/561952828789227520/Banner.gif")
         .setColor('#ff0000')
-        //.setFooter(`ID: ${message.author.id}`);
     message.channel.send(embed)
     });
 }
