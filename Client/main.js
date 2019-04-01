@@ -8,7 +8,10 @@ const private = require("./private.json");
 //attaching the config to the CLIENT so it's accessible everywhere
 client.config = config;
 
-client.on('error', console.error);
+client.on('error', (error) => {
+  console.error(new Date() + ": Discord client encountered an error");
+  console.error(error);
+});
 
 //RAW reaction packet listener
 const events = {

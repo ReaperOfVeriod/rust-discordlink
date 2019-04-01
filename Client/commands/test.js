@@ -1,7 +1,5 @@
 const request = require('request');
 const Discord = require('discord.js');
-const fs = require('fs');
-const path = "./images";
 
 exports.run = (client, message, args) => {
     request('https://rust-servers.net/api/?object=servers&element=detail&key=fMfruWLJibpYrcIpGfg1zQ2koShJ5hdfVOH', { json: true }, (err, res, body) => {
@@ -9,8 +7,6 @@ exports.run = (client, message, args) => {
             return console.log(err); 
         }
         //console.log(body);
-
-        const banner = fs.readdirSync(path);
 
         let id = body.id;
         let serverName = body.name;
@@ -24,27 +20,28 @@ exports.run = (client, message, args) => {
         let voteLink = `${body.url}vote/`;
 
         const embed = new Discord.RichEmbed() //embed
-        .setTitle('test')
+        .setTitle('Rusticaland Stats.')
+        .setThumbnail('https://images-ext-2.discordapp.net/external/Zs3Tr3G-0Z03XlKZD5rTkF9NIE0_aGsfDotdriSk1LA/%3Fsize%3D1024/https/cdn.discordapp.com/avatars/550753683433062420/d5089bab0829653868e7b1b5b1354e3f.webp')
         .setDescription(`
-        
+        ** id **
         ${id}
-
+        ** Server Name **
         ${serverName}
-
+        ** IP **
         ${ipAdress}
-
+        ** Location **
         ${location}
-
+        ** Map Type **
         ${mapType}
-
+        ** Player count **
         ${playerCount}
-
+        ** Game Version **
         ${gameVersion}
-
+        ** rank **
         ${rank}
-
+        ** Votes **
         ${votes}
-
+        ** Vote Link **
         ${voteLink}
 
         
