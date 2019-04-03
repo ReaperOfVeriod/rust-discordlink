@@ -1,4 +1,6 @@
-exports.run = (client, message, args) => {
+module.exports = {
+  name : "reload",
+  execute(client, message, args) {
     const config = require("./../config.json");
     if (message.guild === null) { return }
     if(message.author.id !== config.ownerID) return;
@@ -16,4 +18,5 @@ exports.run = (client, message, args) => {
     client.commands.set(commandName, props);
     message.reply(`The command ${commandName} has been reloaded`);
     console.log(`The command ${commandName} has been reloaded`)
+  }
 };

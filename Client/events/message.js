@@ -9,12 +9,14 @@ module.exports = (client, message) => {
       const command = args.shift().toLowerCase();
 
       // Grab the command data from the client.commands Enmap
-      const cmd = client.commands.get(command);
-
+      const cmd = client.commands.get(command)
+        || client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(command));
+      //console.log(cmd.help.aliases);
+      if (!cmd) return;
       // If that command doesn't exist, silently exit and do nothing
       if (cmd) {
         // Run the command
-        cmd.run(client, message, args);
+        cmd.execute(client, message, args);
       }
     }
 };

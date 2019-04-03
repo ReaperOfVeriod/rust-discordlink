@@ -2,8 +2,12 @@ const request = require('request');
 const Discord = require('discord.js');
 const config = require("./../config.json");
 
-exports.run = (client, message, args) => {
-	request('https://rust-servers.net/api/?object=servers&element=detail&key=fMfruWLJibpYrcIpGfg1zQ2koShJ5hdfVOH', { json: true }, (err, res, body) => {
+module.exports = {
+
+	name : "stats",
+	aliases : ["server", "status"],
+	execute(client, message, args) {
+		request('https://rust-servers.net/api/?object=servers&element=detail&key=fMfruWLJibpYrcIpGfg1zQ2koShJ5hdfVOH', { json: true }, (err, res, body) => {
 		if (err) {
 			return console.log(err);
 		}
@@ -57,13 +61,7 @@ exports.run = (client, message, args) => {
 				embed.addField('**Uptime**', uptime, true)
 				embed.setTimestamp()
 				embed.setImage("https://i.imgur.com/XkC62H9.gif")
-			message.channel.send(embed)
+			message.channel.send(embed);
 		});
 	})
-}
-
-exports.help = {
-	name : "stats",
-	description : "test description :D",
-	usage : `${config.prefix}stats`
-}
+	}}

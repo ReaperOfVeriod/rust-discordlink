@@ -1,6 +1,9 @@
 const request = require('request');
 
-exports.run = (client, message, args) => {
+module.exports = {
+  name : "code",
+  execute(client, message, args) {
+
     let getUserID = message.author.id; //grab id of discord user
 
     request('http://localhost:3000/User', { json: true }, (err, res, body) => {
@@ -27,4 +30,5 @@ exports.run = (client, message, args) => {
         });
       }
     });
+  }
 }
