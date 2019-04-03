@@ -19,7 +19,7 @@ module.exports = {
 		let location = body.location;
 		let mapType = body.map;
 		let playerCount = `${body.players}/${body.maxplayers}`;
-		let gameVersion = body.version;
+		let serverVersion = body.version;
 		let rank = body.rank;
 		let votes = body.votes;
 		let voteLink = `${body.url}vote/`;
@@ -53,11 +53,11 @@ module.exports = {
 				embed.addField('**Location**', location, true)
 				embed.addField('**Map Type**', mapType, true)
 				embed.addField('**Player count**', playerCount, true)
-				embed.addField('**Game Version**', gameVersion, true)
+				embed.addField('**Server Version**', serverVersion, true)
 				embed.addField('**Rank **', rank, true)
 				embed.addField('**Votes**', votes, true)
-				embed.addField('**Vote Link**', 'Click [here](https://rust-servers.net/server/136181/vote/) to vote!', true)
 				embed.addField('**Top Voter**', topVoter, true)
+				embed.addField('**Vote Link**', '[Click here to vote!](https://rust-servers.net/server/136181/vote/)', true)
 				embed.addField('**Uptime**', uptime, true)
 				embed.setTimestamp()
 				embed.setImage("https://i.imgur.com/XkC62H9.gif")
