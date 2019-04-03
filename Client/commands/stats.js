@@ -6,12 +6,13 @@ module.exports = {
 
 	name : "stats",
 	aliases : ["server", "status"],
+	usage : `${config.prefix}stats`,
+	description : "Displays server stats for Rusticaland.",
 	execute(client, message, args) {
 		request('https://rust-servers.net/api/?object=servers&element=detail&key=fMfruWLJibpYrcIpGfg1zQ2koShJ5hdfVOH', { json: true }, (err, res, body) => {
 		if (err) {
 			return console.log(err);
 		}
-		//console.log(body);
 
 		let id = body.id;
 		let serverName = body.name;
