@@ -10,12 +10,7 @@ module.exports = {
         if (message.guild === null) { return }
 
         const embed = new Discord.RichEmbed() //embed
-            .setTitle('test')
-            .setDescription(`
-            
-            🔥
-            
-            `)
+        embed.addField("To prevent bot raid & spams we setup a verification command", "If you have read the rules then react below with 😄", true)
             .setColor('#ff0000')
             .setFooter(`ID: ${message.author.id}`);
         message.channel.send(embed).then(msg => {
