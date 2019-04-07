@@ -11,7 +11,7 @@ module.exports = {
 
         const embed = new Discord.RichEmbed() //embed
         embed.addField("To prevent bot raid & spams we setup a verification command", "If you have read the rules then react below with 😄", true)
-            .setColor('#ff0000')
+            .setColor('#32CD32')
             .setImage("https://i.imgur.com/XkC62H9.gif")
         message.channel.send(embed).then(msg => {
             msg.react('😄').catch(console.error);
@@ -19,4 +19,3 @@ module.exports = {
         message.delete();
     }
 };
-
