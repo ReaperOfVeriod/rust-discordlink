@@ -1,5 +1,9 @@
+const config = require("./../config.json");
+
 module.exports = {
   name : "reload",
+  usage : `${config.prefix}reload`,
+	description : "reloads commands (ADMIN ONLY)",
   execute(client, message, args) {
     const config = require("./../config.json");
     if (message.guild === null) { return }

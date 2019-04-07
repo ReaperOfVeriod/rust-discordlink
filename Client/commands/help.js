@@ -18,7 +18,7 @@ module.exports = {
                     .addField('**command name**', command.name, true)
                     .addField('**command usage**', command.usage, true)
                     .addField('**command description**', command.description, false)
-                    .addField('**command aliases**', command.aliases, false)
+                    .addField('**command aliases**', command.aliases || "there are no aliases", false)
                 message.channel.send(helpEmbed);
             }
         }
@@ -31,7 +31,7 @@ module.exports = {
                     commandName = file.split('.')[0];
                     commandArray.push(commandName);
                 })
-                
+
                 let helpEmbed = new Discord.RichEmbed()
                     .setDescription('Help Menu')
                 commandArray.forEach(command => {

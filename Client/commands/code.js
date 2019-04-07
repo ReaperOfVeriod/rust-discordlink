@@ -1,7 +1,10 @@
 const request = require('request');
+const config = require("./../config.json");
 
 module.exports = {
   name : "code",
+	usage : `${config.prefix}code`,
+	description : "Gives you a code to link your discord acc to your account on Rusticaland.",
   execute(client, message, args) {
 
     let getUserID = message.author.id; //grab id of discord user

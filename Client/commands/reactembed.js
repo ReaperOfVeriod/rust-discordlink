@@ -1,7 +1,10 @@
 const Discord = require('discord.js');
+const config = require("./../config.json");
 
 module.exports = {
     name : "reactembed",
+    usage : `${config.prefix}reactembed`,
+	description : "Sends embed to react for role to.",
     execute(client, message, args) {
 
         if (message.guild === null) { return }
