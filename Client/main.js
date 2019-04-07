@@ -48,7 +48,7 @@ client.on('messageReactionAdd', (reaction, user, data, message) => {
   const testRole = guild.roles.find(role => role.name === "Verified Users");
   const MEMBER = guild.member(user);
   MEMBER.addRole(testRole).catch(console.error);
-  user.send(`you have been added to the ${testRole.name} role`);
+  user.send(`You have been added to the ${testRole.name} role!`);
 });
 
 // client.on('messageReactionRemove', (reaction, user) => {
