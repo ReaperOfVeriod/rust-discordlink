@@ -45,7 +45,7 @@ client.on('messageReactionAdd', (reaction, user, data, message) => {
   console.log();
   if (reaction.message.id !== config.embedRoleReactID) return;
   const guild = client.guilds.get(config.serverID);
-  const testRole = guild.roles.find(role => role.name === "Verified Users");
+  const testRole = guild.roles.find(role => role.name === "Verified");
   const MEMBER = guild.member(user);
   MEMBER.addRole(testRole).catch(console.error);
   user.send(`You have been added to the ${testRole.name} role!`);
