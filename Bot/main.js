@@ -63,10 +63,10 @@ y.addListener("data", res => {
 });
 
 //event handler
-fs.readdir("./events/", (err, files) => {
+fs.readdir("./Bot/events/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
-    const event = require(`./events/${file}`);
+    const event = require(`./Bot/events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
   });
@@ -74,11 +74,11 @@ fs.readdir("./events/", (err, files) => {
 
 client.commands = new Enmap();
 //command handler
-fs.readdir("./commands/", (err, files) => {
+fs.readdir("./Bot/commands/", (err, files) => {
   if (err) return console.error(err);
   files.forEach(file => {
     if (!file.endsWith(".js")) return;
-    let props = require(`./commands/${file}`);
+    let props = require(`./Bot/commands/${file}`);
     let commandName = file.split(".")[0];
     console.log(`Attempting to load command: ${commandName}`);
     client.commands.set(commandName, props);
