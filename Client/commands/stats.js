@@ -63,6 +63,7 @@ module.exports = {
 				embed.setTimestamp()
 				embed.setImage("https://i.imgur.com/XkC62H9.gif")
 			message.channel.send(embed);
+			message.delete();
 		});
 	})
 	}

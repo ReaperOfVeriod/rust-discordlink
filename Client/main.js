@@ -43,18 +43,23 @@ client.on('raw', async event => {
 client.on('messageReactionAdd', (reaction, user, data, message) => {
   if (reaction.message.id !== config.embedRoleReactID) return;
   const guild = client.guilds.get(config.serverID);
-  if (reaction.emoji.name === "😮") {
+  if (reaction.emoji.name === "check") {
     const Role = guild.roles.find(role => role.name === config.roleName1);
     const MEMBER = guild.member(user);
     MEMBER.addRole(Role).catch(console.error);
     user.send(`You have been added to the ${Role.name} role!`).catch(console.error);
-  } else if (reaction.emoji.name === "😄") {
+  } else if (reaction.emoji.name === "rusticaland") {
     const Role = guild.roles.find(role => role.name === config.roleName2); 
     const MEMBER = guild.member(user);
     MEMBER.addRole(Role).catch(console.error);
     user.send(`You have been added to the ${Role.name} role!`).catch(console.error);
-  } else if (reaction.emoji.name === "🤔") {
+  } else if (reaction.emoji.name === "rust") {
     const Role = guild.roles.find(role => role.name === config.roleName3); 
+    const MEMBER = guild.member(user);
+    MEMBER.addRole(Role).catch(console.error);
+    user.send(`You have been added to the ${Role.name} role!`).catch(console.error);    
+  } else if (reaction.emoji.name === "rust_fridge") {
+    const Role = guild.roles.find(role => role.name === config.roleName4); 
     const MEMBER = guild.member(user);
     MEMBER.addRole(Role).catch(console.error);
     user.send(`You have been added to the ${Role.name} role!`).catch(console.error);    

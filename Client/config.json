@@ -1,10 +1,11 @@
 {
     "prefix":"!",
-    "ownerID":"197082304420511744",
-    "consoleChannel" : "557640637151707136",
-    "embedRoleReactID" : "574918857878142997",
-    "serverID" : "556862298816512034",
-    "roleName1" : "test",
-    "roleName2" : "test2",
-    "roleName3" : "test3"
+    "ownerID":"330151938266103810",
+    "consoleChannel" : "573234807501488135",
+    "embedRoleReactID" : "575095475536134184",
+    "serverID" : "320966255727345665",
+    "roleName1" : "Verified",
+    "roleName2" : "RusticalandUpdate",
+    "roleName3" : "RustUpdate",
+	"roleName4" : "DiscordUpdate"
 }
