@@ -15,6 +15,8 @@ module.exports = {
             .setImage("https://i.imgur.com/XkC62H9.gif")
         message.channel.send(embed).then(msg => {
             msg.react('😄').catch(console.error);
+            msg.react('😮').catch(console.error);
+            msg.react('🤔').catch(console.error);
         }).catch(console.error);
         message.delete();
     }

@@ -41,14 +41,24 @@ client.on('raw', async event => {
 });
 
 client.on('messageReactionAdd', (reaction, user, data, message) => {
-  
-  console.log();
   if (reaction.message.id !== config.embedRoleReactID) return;
   const guild = client.guilds.get(config.serverID);
-  const Role = guild.roles.find(role => role.name === "Verified");
-  const MEMBER = guild.member(user);
-  MEMBER.addRole(Role).catch(console.error);
-  user.send(`You have been added to the ${Role.name} role!`);
+  if (reaction.emoji.name === "😮") {
+    const Role = guild.roles.find(role => role.name === config.roleName1);
+    const MEMBER = guild.member(user);
+    MEMBER.addRole(Role).catch(console.error);
+    user.send(`You have been added to the ${Role.name} role!`).catch(console.error);
+  } else if (reaction.emoji.name === "😄") {
+    const Role = guild.roles.find(role => role.name === config.roleName2); 
+    const MEMBER = guild.member(user);
+    MEMBER.addRole(Role).catch(console.error);
+    user.send(`You have been added to the ${Role.name} role!`).catch(console.error);
+  } else if (reaction.emoji.name === "🤔") {
+    const Role = guild.roles.find(role => role.name === config.roleName3); 
+    const MEMBER = guild.member(user);
+    MEMBER.addRole(Role).catch(console.error);
+    user.send(`You have been added to the ${Role.name} role!`).catch(console.error);    
+  }
 });
 
 // client.on('messageReactionRemove', (reaction, user) => {

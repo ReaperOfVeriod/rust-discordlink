@@ -1,7 +1,10 @@
 {
     "prefix":"!",
     "ownerID":"197082304420511744",
-    "consoleChannel" : "556862299323891714",
-    "embedRoleReactID" : "564508309290483732",
-    "serverID" : "320966255727345665"
+    "consoleChannel" : "557640637151707136",
+    "embedRoleReactID" : "574918857878142997",
+    "serverID" : "556862298816512034",
+    "roleName1" : "test",
+    "roleName2" : "test2",
+    "roleName3" : "test3"
 }
