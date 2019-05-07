@@ -1,11 +1,15 @@
 {
     "prefix":"!",
-    "ownerID":"330151938266103810",
-    "consoleChannel" : "573234807501488135",
+    "ownerID":"197082304420511744",
+    "consoleChannel" : "557640637151707136",
     "embedRoleReactID" : "575095475536134184",
-    "serverID" : "320966255727345665",
+    "serverID" : "556862298816512034",
     "roleName1" : "test1",
     "roleName2" : "test2",
     "roleName3" : "test3",
-	"roleName4" : "test4"
+    "roleName4" : "test4",
+    "emoji1" : "😛",
+    "emoji2" : "😄",
+    "emoji3" : "😂",
+    "emoji4" : "😉"
 }
