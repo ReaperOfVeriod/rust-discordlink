@@ -62,7 +62,25 @@ client.on('messageReactionAdd', (reaction, user, data, message) => {
 });
 
 // client.on('messageReactionRemove', (reaction, user) => {
-// 	console.log(`${user.username} removed their "${reaction.emoji.name}" reaction.`);
+//   console.log(`${user.username} removed their "${reaction.emoji.name}" reaction.`);
+//   if (reaction.message.id !== config.embedRoleReactID) return;
+//   const guild = client.guilds.get(config.serverID);
+//   if (reaction.emoji.name === "😮") {
+//     const Role = guild.roles.find(role => role.name === config.roleName1);
+//     const MEMBER = guild.member(user);
+//     MEMBER.removeRole(Role).catch(console.error);
+//     user.send(`You no longer have the ${Role.name} role!`).catch(console.error);
+//   } else if (reaction.emoji.name === "😄") {
+//     const Role = guild.roles.find(role => role.name === config.roleName2); 
+//     const MEMBER = guild.member(user);
+//     MEMBER.removeRole(Role).catch(console.error);
+//     user.send(`You no longer have the ${Role.name} role!`).catch(console.error);
+//   } else if (reaction.emoji.name === "🤔") {
+//     const Role = guild.roles.find(role => role.name === config.roleName3); 
+//     const MEMBER = guild.member(user);
+//     MEMBER.removeRole(Role).catch(console.error);
+//     user.send(`You no longer have the ${Role.name} role!`).catch(console.error);   
+//   }
 // });
 
 // console chatter
