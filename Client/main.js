@@ -44,22 +44,22 @@ client.on('messageReactionAdd', (reaction, user, data, message) => {
   if (user.bot) return;
   if (reaction.message.id !== config.embedRoleReactID) return;
   const guild = client.guilds.get(config.serverID);
-  if (reaction.emoji.name === config.emoji1) {
+  if (reaction.emoji.name === config.emojiName1) {
     const Role = guild.roles.find(role => role.name === config.roleName1);
     const MEMBER = guild.member(user);
     MEMBER.addRole(Role).catch(console.error);
     user.send(`You have been added to the ${Role.name} role!`).catch(console.error);
-  } else if (reaction.emoji.name === config.emoji2) {
+  } else if (reaction.emoji.name === config.emojiName2) {
     const Role = guild.roles.find(role => role.name === config.roleName2); 
     const MEMBER = guild.member(user);
     MEMBER.addRole(Role).catch(console.error);
     user.send(`You have been added to the ${Role.name} role!`).catch(console.error);
-  } else if (reaction.emoji.name === config.emoji3) {
+  } else if (reaction.emoji.name === config.emojiName3) {
     const Role = guild.roles.find(role => role.name === config.roleName3); 
     const MEMBER = guild.member(user);
     MEMBER.addRole(Role).catch(console.error);
     user.send(`You have been added to the ${Role.name} role!`).catch(console.error);    
-  } else if (reaction.emoji.name === config.emoji4) {
+  } else if (reaction.emoji.name === config.emojiName4) {
     const Role = guild.roles.find(role => role.name === config.roleName4); 
     const MEMBER = guild.member(user);
     MEMBER.addRole(Role).catch(console.error);
@@ -71,22 +71,22 @@ client.on('messageReactionRemove', (reaction, user) => {
   if (user.bot) return;
   if (reaction.message.id !== config.embedRoleReactID) return;
   const guild = client.guilds.get(config.serverID);
-  if (reaction.emoji.name === config.emoji1) {
+  if (reaction.emoji.name === config.emojiName1) {
     const Role = guild.roles.find(role => role.name === config.roleName1);
     const MEMBER = guild.member(user);
     MEMBER.removeRole(Role).catch(console.error);
     user.send(`You no longer have the ${Role.name} role!`).catch(console.error);
-  } else if (reaction.emoji.name === config.emoji2) {
+  } else if (reaction.emoji.name === config.emojiName2) {
     const Role = guild.roles.find(role => role.name === config.roleName2); 
     const MEMBER = guild.member(user);
     MEMBER.removeRole(Role).catch(console.error);
     user.send(`You no longer have the ${Role.name} role!`).catch(console.error);
-  } else if (reaction.emoji.name === config.emoji3) {
+  } else if (reaction.emoji.name === config.emojiName3) {
     const Role = guild.roles.find(role => role.name === config.roleName3); 
     const MEMBER = guild.member(user);
     MEMBER.removeRole(Role).catch(console.error);
     user.send(`You no longer have the ${Role.name} role!`).catch(console.error);   
-  } else if (reaction.emoji.name === config.emoji4) {
+  } else if (reaction.emoji.name === config.emojiName4) {
     const Role = guild.roles.find(role => role.name === config.roleName4); 
     const MEMBER = guild.member(user);
     MEMBER.removeRole(Role).catch(console.error);
