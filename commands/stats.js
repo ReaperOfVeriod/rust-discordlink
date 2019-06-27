@@ -48,7 +48,6 @@ module.exports = {
 				} else {
 					embed.addField('**Status**', "Online", true)
 				}
-				
 				embed.addField('**Server Name**', serverName, true)
 				embed.addField('**IP:PORT**', ipAdress, true)
 				embed.addField('**Location**', location, true)

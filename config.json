@@ -1,15 +1,15 @@
 {
     "prefix":"!",
     "ownerID":"330151938266103810",
-    "consoleChannel" : "573234807501488135",
-    "embedRoleReactID" : "575359880680964100",
+    "consoleChannel" : "576765523614892034",
+    "embedRoleReactID" : "593658217116991489",
     "serverID" : "320966255727345665",
     "roleName1" : "Verified",
     "roleName2" : "RusticalandNews",
     "roleName3" : "RustNews",
     "roleName4" : "DiscordNews",
     "emoji1" : "<:check:572743170962489355>",
-	"emoji2" : "<:rusticaland:570933703103217664>",
+    "emoji2" : "<:rusticaland:570933703103217664>",
 	"emoji3" : "<:rust:575062284511215626>",
-	"emoji4" : "<:rust_fridge:572739168418004993>"
+	"emoji4" : "<:discord_:586378505391177767>"
 }
