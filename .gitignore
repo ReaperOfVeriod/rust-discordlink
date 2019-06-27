@@ -75,5 +75,4 @@ typings/
 # FuseBox cache
 .fusebox/
 
-/private.json
 private.json
