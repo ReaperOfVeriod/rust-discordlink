@@ -12,7 +12,7 @@
     "color": "^3.1.1",
     "discord.js": "^11.4.2",
     "enmap": "^4.8.1",
-    "mongoose": "^5.4.19",
+    "mongoose": "^5.7.5",
     "request": "^2.88.0"
   }
 }
